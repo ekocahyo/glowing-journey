@@ -1,7 +1,8 @@
 name: Release to Docker Hub
 
 on:
-  branches:
+  push:
+    branches:
       - 'main'
     tags:
       - 'v*'
