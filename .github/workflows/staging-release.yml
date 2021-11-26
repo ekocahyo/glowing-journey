@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Staging Release
 
 on:
   push:
@@ -22,8 +22,7 @@ jobs:
       uses: docker/metadata-action@v3
       with:
         images: ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_IMAGE}}
-        tags: |
-          type=ref,event=branch
+        tags: 'staging'
     -
       name: Login to DockerHub
       if: github.event_name != 'pull_request'
